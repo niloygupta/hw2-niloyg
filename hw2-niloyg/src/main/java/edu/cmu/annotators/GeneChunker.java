@@ -51,7 +51,8 @@ public class GeneChunker {
   {
     File modelFile = new File(trainedGeneERModel);
     try {
-      chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
+      //chunker = (Chunker) AbstractExternalizable.readObject(modelFile);
+      chunker = (Chunker) AbstractExternalizable.readResourceObject(GeneERCollectionReader.class,trainedGeneERModel);
     } catch (ClassNotFoundException e) {
       e.printStackTrace();
     } catch (IOException e) {

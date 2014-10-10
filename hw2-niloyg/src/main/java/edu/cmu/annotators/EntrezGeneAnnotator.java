@@ -31,10 +31,10 @@ public class EntrezGeneAnnotator extends JCasAnnotator_ImplBase {
 
     while (geneTags.hasNext()) {
       GeneMentionTag geneTag = (GeneMentionTag) geneTags.next();
-      if((geneTag.getConfidence()>0.40 && geneTag.getConfidence()<0.50))
+      if((geneTag.getConfidence()>0.55 && geneTag.getConfidence()<0.70))
       {
         if(EntrezGeneWrapper.getInstance().checkGene(geneTag.getGeneTag()))
-          geneTag.setConfidence(1.5*geneTag.getConfidence());
+          geneTag.setConfidence(1.2*geneTag.getConfidence());
       }
     }
     

@@ -40,7 +40,7 @@
       <nameValuePair>
         <name>OutputFile</name>
         <value>
-          <string>src/main/resources/outputData/hw2-niloyg.out</string>
+          <string>hw2-niloyg.out</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

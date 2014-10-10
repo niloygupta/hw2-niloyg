@@ -49,13 +49,13 @@
 		    <nameValuePair>
 		        <name>InputFile</name>
 		        <value>
-		            <string>src/main/resources/inputData/sample.in</string>
+		            <string>hw2.in</string>
 		        </value>
 		    </nameValuePair>
             <nameValuePair>
 		        <name>ModelFile</name>
 		        <value>
-		            <string>src/main/resources/inputData/model.hmm</string>
+		            <string>/inputData/model.hmm</string>
 		        </value>
 		    </nameValuePair>
 		</configurationParameterSettings>

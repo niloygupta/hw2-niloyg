@@ -86,7 +86,7 @@ public class GeneCasConsumer extends CasConsumer_ImplBase {
     
     while (geneTags.hasNext()) {
       GeneMentionTag sentence = (GeneMentionTag) geneTags.next();
-      if(sentence.getConfidence()>0.50) //Prints tags with confidence greater than 50%
+      if(sentence.getConfidence()>0.75) //Prints tags with confidence greater than 50%
         writer.println(sentence.getLineID()+"|"+sentence.getTagBegin()+" "+sentence.getTagEnd()+"|"+sentence.getGeneTag());
     }
     writer.close();

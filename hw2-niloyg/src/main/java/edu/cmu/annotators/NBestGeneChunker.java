@@ -39,9 +39,9 @@ public class NBestGeneChunker {
   /**
    * @param ERModelFile File path to the HMM Model
    */
-  public void setTrainedGeneERModel(String ERModelFile)
+  public void setTrainedGeneERModel(ConfidenceChunker ERModelFile)
   {
-    trainedGeneERModel = ERModelFile;
+    chunker = ERModelFile;
   }
   
   /**

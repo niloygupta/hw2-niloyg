@@ -35,9 +35,9 @@ public class AbnerGeneAnnotator extends JCasAnnotator_ImplBase {
 
     while (geneTags.hasNext()) {
       GeneMentionTag geneTag = (GeneMentionTag) geneTags.next();
-      if ((geneTag.getConfidence() > 0.30 && geneTag.getConfidence() < 0.50)) {
+      if ((geneTag.getConfidence() > 0.50 && geneTag.getConfidence() < 0.80)) {
         if (checkAbner(geneTag.getGeneTag(), geneText))
-          geneTag.setConfidence(1.5*geneTag.getConfidence());
+          geneTag.setConfidence(1.4*geneTag.getConfidence());
         else
           geneTag.setConfidence(0.9*geneTag.getConfidence());
       }

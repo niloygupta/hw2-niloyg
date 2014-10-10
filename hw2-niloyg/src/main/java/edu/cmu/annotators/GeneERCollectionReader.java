@@ -12,6 +12,9 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.util.Progress;
 
+import com.aliasi.chunk.ConfidenceChunker;
+import com.aliasi.util.AbstractExternalizable;
+
 
 /**
  * @author niloygupta
@@ -38,10 +41,15 @@ public class GeneERCollectionReader extends CollectionReader_ImplBase {
   
   public void initialize() throws ResourceInitializationException {
     inputFile = new File(((String) getConfigParameterValue(PARAM_INPUT_FILE)).trim());
-    hmmModel  = (String) getConfigParameterValue(PARAM_MODEL_FILE);
-
-    GeneChunker.getInstance().setTrainedGeneERModel(hmmModel);
-    NBestGeneChunker.getInstance().setTrainedGeneERModel(hmmModel);
+    try {
+      NBestGeneChunker.getInstance().setTrainedGeneERModel((ConfidenceChunker) AbstractExternalizable.readResourceObject(GeneERCollectionReader.class, 
+              (String) getConfigParameterValue(PARAM_MODEL_FILE)));
+    } catch (ClassNotFoundException e1) {
+      e1.printStackTrace();
+    } catch (IOException e1) {
+      e1.printStackTrace();
+    }
+    
 
     // if input file does not exist, throw exception
     if (!inputFile.exists()) {
